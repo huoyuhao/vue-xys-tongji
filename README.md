@@ -16,7 +16,7 @@ Vue.use(xystongji, {router: router})
 ```
 埋点统计
 ```
-<a v-xystrack="keyName" >点击时间上报</a>
+<a v-xys-strack="keyName">点击事件上报</a>
 ```
 
 ###说明

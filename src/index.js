@@ -14,7 +14,7 @@ export default function install (Vue, setupOptions = {}) {
       }
     })
   }
-  Vue.directive('xystrack', {
+  Vue.directive('xys-strack', {
     bind(el, binding) {
       el.addEventListener('click', () => {
         if (options.trackEvent) {

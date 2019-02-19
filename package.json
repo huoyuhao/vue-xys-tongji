@@ -1,7 +1,7 @@
 {
   "name": "vue-xys-tongji",
   "description": "这是小雨伞数据统计的组件",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Yuhoo <yuhoo@muchenglin.com>",
   "license": "MIT",
   "main": "dist/index.js",
