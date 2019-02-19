@@ -6,10 +6,16 @@ export default function install (Vue, setupOptions = {}) {
   if (options.router) {
     options.router.afterEach((to, from) => {
       if (from.path !== '/') {
-        if (options.trackPageView) {
-          options.trackPageView(location.protocol + '//' + location.host + to.fullPath)
+        let url
+        if (options.router.mode === 'history') {
+          url = location.protocol + '//' + location.host + (options.router.options.base || '') +  to.fullPath
         } else {
-          window._xystj && _xystj.trackPageView(location.protocol + '//' + location.host + to.fullPath)
+          url = location.protocol + '//' + location.host + location.pathname + location.search + '#' + to.fullPath
+        }
+        if (options.trackPageView) {
+          options.trackPageView(url)
+        } else {
+          window._xystj && _xystj.trackPageView(url)
         }
       }
     })
