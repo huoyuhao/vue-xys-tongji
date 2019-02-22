@@ -20,13 +20,13 @@ export default function install (Vue, setupOptions = {}) {
       }
     })
   }
-  Vue.directive('xys-strack', {
+  Vue.directive('xys-track', {
     bind(el, binding) {
       el.addEventListener('click', () => {
         if (options.trackEvent) {
-          options.trackEvent(binding.value, 'click')
+          options.trackEvent(binding.value === undefined ? binding.expression: binding.value, 'click')
         } else {
-          window._xystj && _xystj.trackEvent(binding.value, 'click')
+          window._xystj && _xystj.trackEvent(binding.value === undefined ? binding.expression: binding.value, 'click')
         }
       }, false)
     }
